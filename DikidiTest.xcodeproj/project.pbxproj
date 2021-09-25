@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C56D001026FF6757006D6FA9 /* VIPBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56D000F26FF6757006D6FA9 /* VIPBlockView.swift */; };
+		C57BC90926FF5B9E009DAD0A /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57BC90826FF5B9E009DAD0A /* URLImageView.swift */; };
 		E77AA7A026FE5B6D00892FEF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AA79F26FE5B6D00892FEF /* NetworkService.swift */; };
 		E77AA7A526FE5DCC00892FEF /* BlockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AA7A426FE5DCC00892FEF /* BlockListViewModel.swift */; };
 		E7BDA21C26FDE7A400E7862C /* DikidiTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BDA21B26FDE7A400E7862C /* DikidiTestApp.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C56D000F26FF6757006D6FA9 /* VIPBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPBlockView.swift; sourceTree = "<group>"; };
+		C57BC90826FF5B9E009DAD0A /* URLImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
 		E77AA79F26FE5B6D00892FEF /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		E77AA7A426FE5DCC00892FEF /* BlockListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListViewModel.swift; sourceTree = "<group>"; };
 		E7BDA21826FDE7A400E7862C /* DikidiTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DikidiTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +82,8 @@
 				E77AA7A626FE5DD500892FEF /* ViewModels */,
 				E7BDA21D26FDE7A400E7862C /* ContentView.swift */,
 				E77AA79F26FE5B6D00892FEF /* NetworkService.swift */,
+				C57BC90826FF5B9E009DAD0A /* URLImageView.swift */,
+				C56D000F26FF6757006D6FA9 /* VIPBlockView.swift */,
 				E7BDA23126FDF2DB00E7862C /* Block rows */,
 				E7BDA22A26FDE7FB00E7862C /* Models */,
 				E7BDA21F26FDE7A700E7862C /* Assets.xcassets */,
@@ -191,6 +197,8 @@
 				E7BDA21E26FDE7A400E7862C /* ContentView.swift in Sources */,
 				E77AA7A526FE5DCC00892FEF /* BlockListViewModel.swift in Sources */,
 				E7BDA23526FDF30F00E7862C /* BlockRow.swift in Sources */,
+				C56D001026FF6757006D6FA9 /* VIPBlockView.swift in Sources */,
+				C57BC90926FF5B9E009DAD0A /* URLImageView.swift in Sources */,
 				E7BDA21C26FDE7A400E7862C /* DikidiTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

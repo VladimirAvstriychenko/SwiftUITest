@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct VipRow: View {
+    
+    var vipBlocks: [VIPBlock] = []
+    init(_ blocks: [VIPBlock]) {
+        vipBlocks = blocks
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            navigationTitle("Премиум")
+            ForEach(vipBlocks){ block in
+                VIPBlockView(block)
+                
+            }
+        }
     }
 }
 

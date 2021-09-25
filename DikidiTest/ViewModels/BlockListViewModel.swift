@@ -15,7 +15,7 @@ final class BlockListViewModel: ObservableObject{
         fetchData()
     }
     
-    var mainResponse: MainResponse? {
+    @Published var mainResponse: MainResponse? {
         didSet {
             didChange.send(self)
         }
