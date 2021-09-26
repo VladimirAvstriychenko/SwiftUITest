@@ -33,7 +33,7 @@ struct VipRowView: View {
             ScrollView(.horizontal) {
                 HStack{
                     ForEach(self.vipBlocks){ block in
-                        VIPBlockView(block)
+                        VIPItemView(block)
                         
                     }
                 }

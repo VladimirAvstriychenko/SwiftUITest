@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct VIPBlockView: View {
+struct VIPItemView: View {
     
     var block: VIPBlock?
     
@@ -26,23 +26,16 @@ struct VIPBlockView: View {
                     .lineLimit(2)
                     .truncationMode(.tail)
                     .multilineTextAlignment(.leading)
-                    //.frame(width: 150, height: 50, alignment: .leading)
+                    
                 
                     HStack{
                         ForEach(self.block!.categories.indices){ i in
                             
-                            if i + 1 < self.block!.categories.count {
-                                Text(self.block!.categories[i] + ", ")
-                                    .truncationMode(.tail)
-                                    .foregroundColor(.gray)
-                                    .font(.caption)
-                                    .multilineTextAlignment(.leading)
+                            if i + 1 < self.block!.categories.count { //Да, я знаю, что это нарушение DRY, но swiftUI не давал мне здесь завести переменную и присвоить ей правильную строку, но я минимизировал повторяющийся код, вынеся его в отельный VIPTextView
+                                VIPTextView(self.block!.categories[i] + ", ")
+                             
                             } else {
-                                Text(self.block!.categories[i])
-                                    .truncationMode(.tail)
-                                    .foregroundColor(.gray)
-                                    .font(.caption)
-                                    .multilineTextAlignment(.leading)
+                                VIPTextView(self.block!.categories[i])
                             }
                             
                             
@@ -59,30 +52,17 @@ struct VIPBlockView: View {
                         }
                         .padding(.horizontal, 10.0)
                         .foregroundColor(.white)
-                    //}
-                    //.padding(.trailing, 1.0)
                     .background(Color.red)
                     .cornerRadius(20)
                 }
-                //.frame(alignment: .trailing)
-//                    .frame(
-//                                maxWidth: .infinity,
-//                                maxHeight: .infinity,
-//                        alignment: Alignment.trailing
-//                            )
+         
             }
-            
-            
-    
-            
-            
         }
-        //Text("Test")
     }
 }
 
 struct VIPBlockView_Previews: PreviewProvider {
     static var previews: some View {
-        VIPBlockView(VIPBlock(id: "1", image: ThumbAndFullImage(thumb: "https://f1.test.dikidi.ru/c1/v3/3sg15ore13.jpg?size=m", origin: "https://f1.test.dikidi.ru/c1/v3/3sg15ore13.jpg"), name: "TestName dsdcds dsds ds sd ds ds ", categories: ["one", "two"]))
+        VIPItemView(VIPBlock(id: "1", image: ThumbAndFullImage(thumb: "https://f1.test.dikidi.ru/c1/v3/3sg15ore13.jpg?size=m", origin: "https://f1.test.dikidi.ru/c1/v3/3sg15ore13.jpg"), name: "TestName dsdcds dsds ds sd ds ds ", categories: ["one", "two"]))
     }
 }

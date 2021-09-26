@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CategoryBlockView: View {
+struct CategoryItemView: View {
     var topBlock: CategoryBlock?
     var bottomBlock: CategoryBlock?
     init(inTopBlock: CategoryBlock?, inBottomBlock: CategoryBlock?) {
@@ -54,6 +54,6 @@ struct CategoryBlockView: View {
 
 struct CategoryBlockView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryBlockView(inTopBlock: CategoryBlock(id: "1", image: ThumbAndFullImage(thumb: "https://f1.test.dikidi.ru/c1/v3/3sg15ore13.jpg?size=m", origin: "https://f1.test.dikidi.ru/c1/v3/3sg15ore13.jpg"), name: "Ногтевой сервис"), inBottomBlock: CategoryBlock(id: "2", image: ThumbAndFullImage(thumb: "https://f1.test.dikidi.ru/c1/v3/3sg15ore13.jpg?size=m", origin: "https://f1.test.dikidi.ru/c1/v3/3sg15ore13.jpg"), name: "Эпиляция, депиляция"))
+        CategoryItemView(inTopBlock: CategoryBlock(id: "1", image: ThumbAndFullImage(thumb: "https://f1.test.dikidi.ru/c1/v3/3sg15ore13.jpg?size=m", origin: "https://f1.test.dikidi.ru/c1/v3/3sg15ore13.jpg"), name: "Ногтевой сервис"), inBottomBlock: CategoryBlock(id: "2", image: ThumbAndFullImage(thumb: "https://f1.test.dikidi.ru/c1/v3/3sg15ore13.jpg?size=m", origin: "https://f1.test.dikidi.ru/c1/v3/3sg15ore13.jpg"), name: "Эпиляция, депиляция"))
     }
 }

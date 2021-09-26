@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NetworkService {
+class NetworkManager {
     func getFromNetwork(completion: @escaping (MainResponse) -> ()) {
         let urlString: String = "https://api-beauty.test.dikidi.ru/home/info"
         guard let url = URL(string: urlString) else {return}
@@ -31,10 +31,9 @@ class NetworkService {
                 let fullResponse = try decoder.decode(FullResponse.self, from: data)
                 DispatchQueue.main.async {
                     // update our UI
-                    //                self.mainResponse = fullResponse.data
                     completion(fullResponse.data)
                 }
-                //                mainResponse = fullResponse.data
+               
             } catch {
                 print(error)
                 fatalError("Couldn't parse response")

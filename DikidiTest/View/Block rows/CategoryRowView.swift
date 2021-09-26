@@ -30,16 +30,12 @@ struct CategoryRowView: View {
             }
             ScrollView(.horizontal) {
                 HStack{
-//                    ForEach(self.categoryBlocks){ block in
-//                        CategoryBlockView(block)
-//
-//                    }
                     ForEach(self.categoryBlocks.indices) { i in
                         if i%2 == 0 {
                             if i + 2 > self.categoryBlocks.count {
-                                CategoryBlockView(inTopBlock:self.categoryBlocks[i], inBottomBlock: nil)
+                                CategoryItemView(inTopBlock:self.categoryBlocks[i], inBottomBlock: nil)
                             } else {
-                                CategoryBlockView(inTopBlock: self.categoryBlocks[i], inBottomBlock: self.categoryBlocks[i+1])
+                                CategoryItemView(inTopBlock: self.categoryBlocks[i], inBottomBlock: self.categoryBlocks[i+1])
                             }
                         }
                         

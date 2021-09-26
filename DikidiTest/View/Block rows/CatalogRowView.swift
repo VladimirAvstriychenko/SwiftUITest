@@ -35,7 +35,7 @@ struct CatalogRowView: View {
         
         VStack(alignment: .leading){
             ForEach(self.catalogBlocks){ block in
-                CatalogBlockView(block, lat: myLat, lng: myLng)
+                CatalogItemView(block, lat: myLat, lng: myLng)
             }
         }
     }

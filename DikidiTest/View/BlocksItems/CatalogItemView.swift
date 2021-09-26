@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreLocation
 
-struct CatalogBlockView: View {
+struct CatalogItemView: View {
     
     var block: CatalogueBlock?
     var myLat: Double
@@ -80,7 +80,7 @@ struct CatalogBlockView: View {
 
 struct CatalogBlockView_Previews: PreviewProvider {
     static var previews: some View {
-        CatalogBlockView(CatalogueBlock(id: "1457",
+        CatalogItemView(CatalogueBlock(id: "1457",
                                         name: "Фри",
                                         image: ThumbAndFullImage(thumb: "https://f1.test.dikidi.ru/c1/v3/3aauaq1vcd.jpg?size=m", origin: "https://f1.test.dikidi.ru/c1/v3/3aauaq1vcd.jpg?size=f"),
                                         street: "Некрасова",
@@ -94,10 +94,3 @@ struct CatalogBlockView_Previews: PreviewProvider {
                                         rating: 3.5), lat: 1, lng: 1)
     }
 }
-
-//extension Double {
-//    func rounded(digits: Int) -> Double {
-//        let multiplier = pow(10.0, Double(digits))
-//        return (self * multiplier).rounded() / multiplier
-//    }
-//}
