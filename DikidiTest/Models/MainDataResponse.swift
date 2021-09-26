@@ -18,12 +18,12 @@ struct ErrorTypeFromJson: Hashable, Codable {
     var message: String?
 }
 struct Block: Codable {
-    var favorites: [CatalogueItemResponse]
+    var favorites: [CatalogueBlock]
     var vip: [VIPBlock]
-    var categories: [String]
-    var catalog: [CatalogueItemResponse]
-    var new: [CatalogueItemResponse]
-    var popular: [CatalogueItemResponse]
+    var categories: [CategoryBlock]
+    var catalog: [CatalogueBlock]
+    var new: [CatalogueBlock]
+    var popular: [CatalogueBlock]
     var examples: String
     
 //    case favourites = "Избранное"
@@ -43,9 +43,15 @@ struct MainResponse: Codable {
     var blocks: Block
 }
 
-struct VIPBlock: Codable {
+struct VIPBlock: Codable, Identifiable {
     var id: String
     var image: ThumbAndFullImage
     var name: String
     var categories: [String]
+}
+
+struct CategoryBlock: Codable, Identifiable {
+    var id: String
+    var image: ThumbAndFullImage
+    var name: String
 }

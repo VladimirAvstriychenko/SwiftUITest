@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CatalogueItemResponse: Codable, Identifiable {
+struct CatalogueBlock: Codable, Identifiable {
     var id: String
     var name: String
     var image: ThumbAndFullImage
@@ -19,6 +19,7 @@ struct CatalogueItemResponse: Codable, Identifiable {
     var categories: [String]
     var isMaster: Bool
     var currency: Currency
+    var rating: Double
     
     
 }
@@ -41,6 +42,11 @@ struct Schedule: Codable {
 //    let doesHaveSchedule: Bool
     let doesHaveSchedule: Int
     let realSchedule: [ScheduleStruct]?
+    
+    init (_ doesHaveSchedule: Int, realSchedule: [ScheduleStruct]?){
+        self.doesHaveSchedule = doesHaveSchedule
+        self.realSchedule = realSchedule
+    }
 
     // Where we determine what type the value is
     init(from decoder: Decoder) //throws {

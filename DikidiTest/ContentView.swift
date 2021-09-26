@@ -6,30 +6,24 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct ContentView: View {
     
     //@State var mainResponse: MainResponse?
     //var mainResponse: MainResponse
     @ObservedObject var model = BlockListViewModel()
-   
+    
+    @StateObject var locationManager = LocationManager()
     
     var body: some View {
         NavigationView{
-//            URLImageView("https://api-beauty.test.dikidi.ru/assets/images/beauty_app/first3.png")
+
             if let response = model.mainResponse {
                 List {
-//                    ZStack {
-//                                Text("Credit: Ricardo Gomez Angel")
-//                                    .font(.callout)
-//                                    .padding(6)
-//                                    .foregroundColor(.white)
-//                            }.background(Color.black)
-//                            .opacity(0.8)
-//                            .cornerRadius(10.0)
-//                            .padding(6)
+
                     URLImageView(response.image)
-//
+
                         .overlay(Text("Онлайн-запись и бронирование услуг")
                                     .font(.headline)
                                     .fontWeight(.semibold)
@@ -37,16 +31,13 @@ struct ContentView: View {
                                     .multilineTextAlignment(.center)
                                     .padding(.top, 100.0)
                                     .frame(width: 200, height: 200, alignment: .center)
-                            
-                        
                         )
-                        
-                        
-                    URLImageView("https://api-beauty.test.dikidi.ru/assets/images/beauty_app/first3.png")
-//                    VipRow(response.blocks.vip)
-//                    CategoryRow(response.blocks.categories)
-//                    ExamplesRow(response.blocks.examples)
-//                    CatalogRow(response.blocks.catalog)
+                    VipRowView(response.blocks.vip)
+                    CategoryRowView(response.blocks.categories)
+                    ExamplesRowView(response.blocks.examples)
+                    CatalogRowView(response.blocks.catalog,
+                                   lat: locationManager.lastLocation?.coordinate.latitude ?? 0,
+                                   lng: locationManager.lastLocation?.coordinate.longitude ?? 0)
 //                    CatalogRow(response.blocks.catalog)
 //                    CatalogRow(response.blocks.catalog)
 //                    CatalogRow(response.blocks.catalog)
@@ -56,9 +47,7 @@ struct ContentView: View {
             }
             
        }
-//        .onAppear(
-//           // perform: getFromNetwork
-//        )
+
     }
     
     
